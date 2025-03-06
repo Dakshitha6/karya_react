@@ -1,0 +1,6 @@
+VITE_NODE_ENV=ENV
+VITE_APP_TITLE=APP_TITLE
+VITE_BASE_URL=https://platform.int.dentsuconnect.com
+VITE_OKTA_ISSUER=
+VITE_CLIENT_ID=
+VITE_PKCE=true
