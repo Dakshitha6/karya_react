@@ -2,7 +2,11 @@
 
 const SideNavigation = () => {
   return (
-    <div>SideNavigation</div>
+    <div>
+      SideNavigation
+      {/* Code SideNavigation */}
+    </div>
+    
   )
 }
 

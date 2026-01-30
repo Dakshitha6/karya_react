@@ -4,44 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-
-    <!-- Start: DC Script -->
-	<script defer>
-		let dentsu_script = "%REACT_APP_DC_INTEGRATION_URL%"; // Confirmation Needed
-		console.log("DENTSU 2.0 SCRIPT", dentsu_script);
-		if (dentsu_script.includes("DC_INTEGRATION_URL")) {
-			dentsu_script = "https://cdn.az.clientportal.gdpdentsu.net/dcintegration/dentsu_connect_v1.js"
-		}
-		console.log("DENTSU 2.0 SCRIPT EXECUTION URL", dentsu_script);
-
-		if (window.location === window.parent.location) {
-			window.dc = window.dc || {};
-			window.dc.config = {
-				env: "%VITE_NODE_ENV%",
-				appTitle: '%VITE_APP_TITLE%',
-				appRootElemId: "root",
-				showClientSwitcher: true,
-				showNavbar: true
-			}
-			console.log("DENTSU 2.0 SCRIPT EXECUTED", dentsu_script)
-			const dcScript = document.createElement('script');
-			dcScript.src = dentsu_script;
-			document.head.appendChild(dcScript);
-		} else {
-			console.log("DENTSU 2.0 SCRIPT DISABLED", dentsu_script)
-		}
-
-		window.addEventListener('connect-to-app', (event) => {
-			window.location.href = '/logout';
-		});
-
-	</script>
-	<!-- End: DC Script -->
-
+    <title>Vite + React + TS</title>    
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+	<!-- Start: DC Script -->
+	<script>
+		window.dc = {};
+		window.dc.config = {
+			env: "%VITE_NODE_ENV%",
+			appTitle: '%VITE_APP_TITLE%',
+			appRootElemId: "root",
+			showClientSwitcher: true,
+			showNavbar: true
+		};
+	</script>
+	<script src="https://cdn.az.clientportal.gdpdentsu.net/dcintegration/dentsu_connect_v1.js"></script>
+	<!-- End: DC Script -->
   </body>
 </html>

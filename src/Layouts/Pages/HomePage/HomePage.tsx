@@ -2,7 +2,10 @@
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      Application goes here
+      {/* Code Application */}
+    </div>
   )
 }
 

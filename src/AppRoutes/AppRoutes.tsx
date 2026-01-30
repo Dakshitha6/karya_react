@@ -5,7 +5,7 @@ import HomePage from "../Layouts/Pages/HomePage/HomePage"
 const AppRoutes = () => {
 	console.log('App routes invoked...')
 	return (
-		// <ApolloProvider client={client("token", JSON.stringify(serviceconfig))}>
+		// <ApolloProvider client={client("token", JSON.stringify(serviceconfig))}> // Uncomment if GQL needed
 		<Routes>
 			<Route path="/" element={<MainLayout />}>
 				<Route index element={<HomePage />} />
