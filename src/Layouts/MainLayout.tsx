@@ -1,23 +1,33 @@
-import SideNavigation from '../components/SideNav/SideNavigation';
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-// Temporarily disabled Frame to avoid Dentsu platform loading issues
-// import { Frame } from '@dentsu-ui/components';
+import SideNavigation from '../components/SideNav/SideNavigation';
+import { useUserStore } from '../store/userStore';
+import './MainLayout.scss';
 
 const MainLayout = () => {
-    return (
-        <div style={{ display: 'flex', height: '100vh' }}>
-            <div style={{ width: '250px', backgroundColor: '#f5f5f5', padding: '1rem' }}>
-                <SideNavigation />
-            </div>
-            <div style={{ flex: 1, padding: '1rem' }}>
-                <Outlet />
-            </div>
-        </div>
-        // Original with Frame (can be re-enabled later):
-        // <Frame navigation={<SideNavigation />}>
-        //     <Outlet />
-        // </Frame>
-    )
-}
+  const { setApplicationLoaded } = useUserStore();
 
-export default MainLayout
+  useEffect(() => {
+    // Hide splash screen loader
+    setApplicationLoaded(true);
+  }, [setApplicationLoaded]);
+
+  return (
+    <div className="main-layout">
+      <nav id="navbar" className="navbar">
+        <h2>KARYA</h2>
+        <SideNavigation showMenu={false} />
+      </nav>
+      <div className="main-content">
+        <aside id="sidebar" className="sidebar">
+          <SideNavigation showMenu={true} />
+        </aside>
+        <div className="page-container">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MainLayout;

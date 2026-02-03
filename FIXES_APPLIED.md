@@ -53,3 +53,4 @@ If you want to use Dentsu UI components later:
 - ✅ `src/hooks/useAuth.ts` - Added timeout and error handling
 - ✅ `src/config/firebase.config.ts` - Added validation
 
+

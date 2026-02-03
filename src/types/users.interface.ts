@@ -12,6 +12,7 @@ export interface UserIF {
   details?: ResumeDetailsIF;
   metadata?: MetadataIF;
   isAdmin?: boolean;
+  isPro?: boolean;
 }
 
 export interface UserCreditsIF {
@@ -66,4 +67,5 @@ export interface UsersListIF {
   totalDocCount: number;
   totalMatchedCount: number;
 }
+
 

@@ -33,3 +33,4 @@ const NegativeAuthRoute = ({ children }: NegativeAuthRouteProps) => {
 
 export default NegativeAuthRoute;
 
+

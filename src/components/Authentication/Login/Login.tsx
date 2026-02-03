@@ -15,7 +15,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const { fetchUserDetails } = useUserDetails();
-  const { userDetails, setApplicationLoaded } = useUserStore();
+  const { setApplicationLoaded } = useUserStore();
   const toast = useToast();
   const navigate = useNavigate();
 
